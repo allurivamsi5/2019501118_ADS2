@@ -18,7 +18,7 @@ public class WordNet
         while (sc1.hasNextLine()){
             String[] arr = sc1.nextLine().split(",");
             System.out.println(arr[0] +" "+ arr[1]);
-    }
+      }
     }
   public static void main(String[] args) throws Exception 
   { 
@@ -27,6 +27,4 @@ public class WordNet
     obj.parseSynsets("f");
     obj.parseHypernyms("f1");
   } 
-
-
 } 
