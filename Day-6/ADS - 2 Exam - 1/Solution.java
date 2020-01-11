@@ -41,8 +41,8 @@ public class Solution{
         }
         Arrays.sort(arr3);
 
-        for(int x = arr3.length - 10; x < arr3.length;x++){
-            System.out.println(map.get(map2.get(arr3[x])));
+        for(int x = arr3.length - 1; x > arr3.length - 10;x--){
+            System.out.println(map.get(map2.get(arr3[x])) + ", "+ arr3[x]);
         }
     }
 
