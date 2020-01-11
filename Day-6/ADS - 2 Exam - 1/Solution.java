@@ -5,11 +5,12 @@ import java.io.File;
 import java.util.*;
 public class Solution{
 
-    HashMap<Integer, String> map = new HashMap<>();
-    HashMap<Integer, Integer> map1 = new HashMap<>();
+    HashMap<Integer, String> map = new HashMap<>();// In this haspMap used to collect the email data
+    HashMap<Integer, Integer> map1 = new HashMap<>();// In this haspMap used to collect the email-logs
     HashMap<Integer, Integer> map2 = new HashMap<>();
 
     int[] arr3;
+    // This method is used for reading the emails.txt.
     private void email(String filename) throws Exception{
         File file = new File("C:\\Users\\VAMSI\\Documents\\2019501118_ADS2\\2019501118_ADS2\\Day-6\\ADS - 2 Exam - 1\\emails.txt");
         Scanner sc = new Scanner (file);
@@ -24,7 +25,7 @@ public class Solution{
             arr3[i] = 0;
         }
     }
-    
+    // This method is used for reading the email-logss.txt.
     private void emailLogs(String filename) throws Exception{
         File file1 = new File("C:\\Users\\VAMSI\\Documents\\2019501118_ADS2\\2019501118_ADS2\\Day-6\\ADS - 2 Exam - 1\\email-logs.txt");
         Scanner sc1 = new Scanner(file1);
