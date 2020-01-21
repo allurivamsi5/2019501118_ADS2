@@ -25,7 +25,7 @@ public class Solution{
             arr3[i] = 0;
         }
     }
-    // This method is used for reading the email-logss.txt.
+    //This method is used for reading the email-logss.txt.
     private void emailLogs(String filename) throws Exception{
         File file1 = new File("C:\\Users\\VAMSI\\Documents\\2019501118_ADS2\\2019501118_ADS2\\Day-6\\ADS - 2 Exam - 1\\email-logs.txt");
         Scanner sc1 = new Scanner(file1);
@@ -42,15 +42,15 @@ public class Solution{
         }
         Arrays.sort(arr3);
 
-        for(int x = arr3.length - 1; x > arr3.length - 10;x--){
+        for(int x = arr3.length - 1; x > arr3.length - 11;x--){
             System.out.println(map.get(map2.get(arr3[x])) + ", "+ arr3[x]);
         }
     }
 
     public static void main (String[] args) throws Exception{
         Solution obj = new Solution();
-        obj.email("emails");
-        obj.emailLogs("email-logs");
+         obj.email("emails");
+         obj.emailLogs("email-logs");
         // System.out.println(obj.map);
         // System.out.println(obj.map1);
   
