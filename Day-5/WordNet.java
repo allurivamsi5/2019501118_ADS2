@@ -1,9 +1,9 @@
 import java.util.ArrayList;
-import java.util.Scanner; 
+// import java.util.Scanner; 
 import java.util.HashMap;
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.Bag;
+// import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.BreadthFirstDirectedPaths;
 public class WordNet
 { 
@@ -15,6 +15,7 @@ public class WordNet
     private final SAP sap;
     private final HashMap<Integer, String> idmap;
     private final HashMap<String, ArrayList<Integer>> wordmap;
+    
     public WordNet(String synsets, String hypernyms) {
 
         idmap = new HashMap<Integer, String>();
@@ -60,13 +61,13 @@ public class WordNet
     private void parseHypernyms(String hypernyms) {
         //File file1 =  new File("C:\\Users\\VAMSI\\Documents\\2019501118_ADS2\\2019501118_ADS2\\Day-1\\Wordnet\\hypernyms.txt"); 
         In sc1 = new In(hypernyms);
-        int count = 0;
+        // int count = 0;
         while (sc1.hasNextLine()){
             String[] arr = sc1.readLine().split(",");
            // System.out.println(arr[0] +" "+ arr[1]);
            //wordmap.add(arr[0]);
            for(int i = 1; i < arr.length; i++){
-               vertices.addEdge(Integer.parseInt(arr[count]),Integer.parseInt(arr[i]));
+               vertices.addEdge(Integer.parseInt(arr[0]),Integer.parseInt(arr[i]));
            }
     }
     }
