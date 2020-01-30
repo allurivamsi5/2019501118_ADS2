@@ -175,7 +175,7 @@ public class SeamCarver{
 
         Picture obj = new Picture(width - 1, height);
         Color color;
-        int column;
+        int c;
         for(int j = 0; j < height; j++){
             for(int i = 0; i < width; i++){
                 if(rVS[j] == i){
@@ -183,11 +183,11 @@ public class SeamCarver{
                 } 
 
                 color = this.p.get(i,j);
-                column = i;
+                c = i;
                 if(i > rVS[j]){
-                    column--;
+                    c--;
                 } 
-                obj.set(column,j,color);
+                obj.set(c,j,color);
             }
         }
         this.p = obj;
