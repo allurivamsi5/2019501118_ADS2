@@ -1,4 +1,6 @@
 import java.awt.Color;
+
+import javax.imageio.metadata.IIOInvalidTreeException;
 public class SeamCarver{
     private Picture p;
     private int width;
@@ -175,7 +177,7 @@ public class SeamCarver{
 
         Picture obj = new Picture(width - 1, height);
         Color color;
-        int c;
+        int column;
         for(int j = 0; j < height; j++){
             for(int i = 0; i < width; i++){
                 if(rVS[j] == i){
@@ -183,15 +185,39 @@ public class SeamCarver{
                 } 
 
                 color = this.p.get(i,j);
-                c = i;
+                column = i;
                 if(i > rVS[j]){
-                    c--;
+                    column--;
                 } 
-                obj.set(c,j,color);
+                obj.set(column,j,color);
             }
         }
         this.p = obj;
         this.width = this.p.width();
         this.height = this.p.height();
     }     
+    public void removeHorizontalSeam(int[] rHS){
+        if(rHS == null){
+            throw new IllegalArgumentException();
+        }
+        Picture obj = new Picture(width, height-1);
+        Color color;
+        int row;
+        for(int i = 0; i < width; i++){
+            for(int j = 0; j < height; j++){
+                if(rHS[i] == j){
+                    continue;
+                }
+                color = this.p.get(i,j);
+                row = j;
+                if(j > rHS[j]){
+                    row--;
+                }
+                obj.set(i,row,color);
+            }
+        }
+        this.p = obj;
+        this.width = this.p.width();
+        this.height = this.p.height();
+    }
 }
