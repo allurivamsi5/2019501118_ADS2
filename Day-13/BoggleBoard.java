@@ -1,15 +1,3 @@
-/******************************************************************************
- *  Compilation:  javac BoggleBoard.java
- *  Execution:    java  BoggleBoard
- *  Dependencies: StdRandom.java In.java StdOut.java
- *
- *  A data type for Boggle boards.
- *
- ******************************************************************************/
-
-// import edu.princeton.cs.algs4.In;
-// import edu.princeton.cs.algs4.StdOut;
-// import edu.princeton.cs.algs4.StdRandom;
 
 public class BoggleBoard {
     // the 16 Boggle dice (1992 version)
@@ -162,22 +150,11 @@ public class BoggleBoard {
         return n;
     }
 
-    /**
-     * Returns the letter in row i and column j,
-     * with 'Q' representing the two-letter sequence "Qu".
-     * @param i the row
-     * @param j the column
-     * @return the letter in row i and column j
-     *    with 'Q' representing the two-letter sequence "Qu".
-     */
+
     public char getLetter(int i, int j) {
         return board[i][j];
     }
 
-    /**
-     * Returns a string representation of the board, replacing 'Q' with "Qu".
-     * @return a string representation of the board, replacing 'Q' with "Qu"
-     */
     public String toString() {
         StringBuilder sb = new StringBuilder(m + " " + n + "\n");
         for (int i = 0; i < m; i++) {

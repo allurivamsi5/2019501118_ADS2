@@ -1,28 +1,3 @@
-/******************************************************************************
- *  Compilation:  javac BoggleGame.java
- *  Execution:    java BoggleGame [m n]
- *  Dependencies: BoggleSolver.java BoggleBoard.java 
- *  Author:       Matthew Drabick
- *
- *  GUI for the boggle solver. Pits the user against a computer opponent
- *  of various difficulties. Can be launched from the command line, where 
- *  the default size of the board for that game must be specified. 
- *  
- *  To add: Way to change the size of the board from inside the game
- *
- *  % javac BoggleGame.java
- *  
- *  % java BoggleGame 
- *
- *  % java -Xmx300m BoggleGame 3 7
- *  
- *  Report bugs to: wayne@princeton.edu, CC mdrabick@princeton.edu
- *
- *  Note: expect some compiler warning with Java 7 because
- *  javax.swing.JList is a parameterized type in Java 7 but not
- *  in Java 6.
- *
- ******************************************************************************/
 
 import java.awt.Color;
 import java.awt.Container;
@@ -65,10 +40,7 @@ public class BoggleGame extends JFrame {
     private static final Color OPP_POINT_WORD    = new Color(0xBFBFBF);
     private static final Color NONPOINT_WORD     = new Color(0xBFBFBF);
 
-    // game levels
-    // keep these in sync - should be a text description for each level!
-    // if making adjustments to levels, endGame (~line 400) contains hard-coded elements
-    // menu items will be adjusted automatically
+  
     private static final int NUMBER_OF_LEVELS = 5;
     private static final String[] LEVEL_DESCRIPTION = {
         "Nursery",
@@ -812,10 +784,7 @@ public class BoggleGame extends JFrame {
             }
         }
         
-        /**
-         * Highlight the correct cubes when typing.
-         * @param s String to match on the board
-         */
+
         public void matchWord(String s) {
             if (path != null) unhighlightCubes();
             path = new int[NUM_OF_CUBES];
@@ -835,14 +804,7 @@ public class BoggleGame extends JFrame {
             }
         }
         
-        /**
-         * Recursive helper method to search for a particular string on the board.
-         * @param s String that is being searched
-         * @param curChar Current char that is being sought
-         * @param pathIndex Current number of cubes searched (only differs from curChar if there is a q in string) 
-         * @param i Row of the board
-         * @param j Column of the board
-         */
+   
         private void dfs(String s, int curChar, int pathIndex, int i, int j) {
             // if the word has already been found
             // if (foundWord) return;
