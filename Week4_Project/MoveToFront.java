@@ -4,14 +4,11 @@ import edu.princeton.cs.algs4.BinaryStdOut;
 public class MoveToFront {
 
 	private static int R = 256;
-
-	// apply move-to-front encoding, reading from standard input and writing to standard output
     public static void encode() {
     		char[] asciiarr = new char[R];
     		for (char i=0; i<256; i++) {
     			asciiarr[i] = i;
     		}
-
     		while (!BinaryStdIn.isEmpty()) {
     			char c = BinaryStdIn.readChar();
     			// searc that char
@@ -29,24 +26,18 @@ public class MoveToFront {
     					prev = temp;
     				}
     			}
-
     			BinaryStdOut.write((char)mark);
     		}
     		BinaryStdOut.close();
     }
-
-    // apply move-to-front decoding, reading from standard input and writing to standard output
     public static void decode() {
     		char[] chars = new char[R];
 		for (char i=0; i<R; i++) {
 			chars[i] = i;
 		}
-
 		while (!BinaryStdIn.isEmpty()) {
 			char c = BinaryStdIn.readChar();
 			BinaryStdOut.write(chars[c], 8);
-
-			// search that char
 			char prev = chars[0];
 			for (char j=0; j<R; j++) {
 				if (j == c) {
